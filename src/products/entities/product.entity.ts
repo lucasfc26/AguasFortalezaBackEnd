@@ -5,10 +5,10 @@ export class Product {
   @PrimaryColumn({ name: 'uuid_product', type: 'uuid' })
   uuidProduct: string;
 
-  @Column({ name: 'name_product' })
+  @Column({ name: 'name_product', type: 'varchar' })
   nameProduct: string;
 
-  @Column({ name: 'type_product' })
+  @Column({ name: 'type_product', type: 'varchar' })
   typeProduct: string;
 
   @Column({ name: 'qtd_product', type: 'int' })

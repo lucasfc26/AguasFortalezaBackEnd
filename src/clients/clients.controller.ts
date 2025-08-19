@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ClientsService } from './clients.service';
 import { ClientSignupDto } from './dtos/client-signup.dto';
 import { ClientLoginDto } from './dtos/client-login.dto';
@@ -21,5 +21,10 @@ export class ClientsController {
   @Post('payment')
   createPayment(@Body() dto: CreatePaymentClientDto) {
     return this.clientsService.addPayment(dto);
+  }
+
+  @Get('list')
+  getClientsList() {
+    return this.clientsService.getClientsList();
   }
 }

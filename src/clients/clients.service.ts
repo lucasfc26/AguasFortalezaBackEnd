@@ -59,4 +59,9 @@ export class ClientsService {
     });
     return this.paymentRepo.save(payment);
   }
+
+  async getClientsList() {
+    const clients = await this.clientRepo.find();
+    return clients;
+  }
 }

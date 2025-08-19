@@ -5,31 +5,37 @@ export class WholesaleCompany {
   @PrimaryColumn({ name: 'uuid_company', type: 'uuid' })
   uuidCompany: string;
 
-  @Column({ name: 'user_company', unique: true })
+  @Column({ name: 'user_company', type: 'varchar', unique: true })
   userCompany: string;
 
-  @Column({ name: 'password_company' })
+  @Column({ name: 'password_company', type: 'varchar' })
   passwordCompany: string;
 
-  @Column({ name: 'validation_token_company', nullable: true })
+  @Column({ name: 'validation_token_company', type: 'varchar', nullable: true })
   validationTokenCompany: string | null;
 
-  @Column({ name: 'name_company' })
+  @Column({ name: 'name_company', type: 'varchar' })
   nameCompany: string;
 
-  @Column({ name: 'email_company', unique: true })
+  @Column({ name: 'email_company', type: 'varchar', unique: true })
   emailCompany: string;
 
-  @Column({ name: 'cnpj_company', unique: true })
+  @Column({ name: 'cnpj_company', type: 'varchar', unique: true })
   cnpjCompany: string;
 
-  @Column({ name: 'address_company', nullable: true })
+  @Column({ name: 'address_company', type: 'varchar', nullable: true })
   addressCompany: string | null;
 
   @Column({ name: 'cont_sells_company', type: 'int', default: 0 })
   contSellsCompany: number;
 
-  @Column({ name: 'rate_company', type: 'float', default: 0 })
+  @Column({
+    name: 'rate_company',
+    type: 'decimal',
+    precision: 5,
+    scale: 2,
+    default: 0,
+  })
   rateCompany: number;
 
   @Column({ name: 'delivery', type: 'boolean', default: false })
@@ -41,6 +47,6 @@ export class WholesaleCompany {
   @Column({ name: 'time_close_company', type: 'timestamp', nullable: true })
   timeCloseCompany: Date | null;
 
-  @Column({ name: 'phone_company', nullable: true })
+  @Column({ name: 'phone_company', type: 'varchar', nullable: true })
   phoneCompany: string | null;
 }

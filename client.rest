@@ -1,0 +1,19 @@
+client.rest
+@baseURL = http://localhost:3000
+### TESTEGET
+#GET
+GET {{baseURL}}/clients/list
+### CRIAR UM USUÁRIO
+#POST
+POST {{baseURL}}/clients/signup
+Content-Type: application/json
+
+{
+  "userClient": "marianacosta",
+  "passwordClient": "160902",
+  "nameClient": "Mariana Costa",
+  "emailClient": "mariacostac16@gmail.com",
+  "cpfClient": "1234567890",
+  "addressClient": "Rua Joaquim Lima, 476 - Papicu",
+  "phoneClient": "85999999999"
+}

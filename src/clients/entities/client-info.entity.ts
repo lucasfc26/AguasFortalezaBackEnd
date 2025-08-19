@@ -5,33 +5,39 @@ export class ClientInfo {
   @PrimaryColumn({ name: 'uuid_client', type: 'uuid' })
   uuidClient: string;
 
-  @Column({ name: 'user_client', unique: true })
+  @Column({ name: 'user_client', type: 'varchar', unique: true })
   userClient: string;
 
-  @Column({ name: 'password_client' })
+  @Column({ name: 'password_client', type: 'varchar' })
   passwordClient: string;
 
-  @Column({ name: 'validation_token_client', nullable: true })
+  @Column({ name: 'validation_token_client', type: 'varchar', nullable: true })
   validationTokenClient: string | null;
 
-  @Column({ name: 'name_client' })
+  @Column({ name: 'name_client', type: 'varchar' })
   nameClient: string;
 
-  @Column({ name: 'email_client', unique: true })
+  @Column({ name: 'email_client', type: 'varchar', unique: true })
   emailClient: string;
 
-  @Column({ name: 'cpf_client', length: 14 })
+  @Column({ name: 'cpf_client', type: 'varchar', length: 14 })
   cpfClient: string;
 
-  @Column({ name: 'address_client', nullable: true })
+  @Column({ name: 'address_client', type: 'varchar', nullable: true })
   addressClient: string | null;
 
   @Column({ name: 'cont_bought_client', type: 'int', default: 0 })
   contBoughtClient: number;
 
-  @Column({ name: 'rate_client_client', type: 'float', default: 0 })
+  @Column({
+    name: 'rate_client_client',
+    type: 'decimal',
+    precision: 5,
+    scale: 2,
+    default: 0,
+  })
   rateClientClient: number;
 
-  @Column({ name: 'phone_client', nullable: true })
+  @Column({ name: 'phone_client', type: 'varchar', nullable: true })
   phoneClient: string | null;
 }

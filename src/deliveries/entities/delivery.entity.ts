@@ -13,9 +13,9 @@ export class Delivery {
   @Column({ name: 'uuid_company', type: 'uuid' })
   uuidCompany: string;
 
-  @Column({ name: 'product' })
+  @Column({ name: 'product', type: 'varchar' })
   product: string;
 
-  @Column({ name: 'type_payment' })
+  @Column({ name: 'type_payment', type: 'varchar' })
   typePayment: string;
 }
