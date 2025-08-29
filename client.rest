@@ -1,19 +1,73 @@
 client.rest
 @baseURL = http://localhost:3000
-### TESTEGET
-#GET
-GET {{baseURL}}/clients/list
+
+
+
 ### CRIAR UM USUÁRIO
 #POST
 POST {{baseURL}}/clients/signup
 Content-Type: application/json
 
 {
-  "userClient": "marianacosta",
-  "passwordClient": "160902",
-  "nameClient": "Mariana Costa",
-  "emailClient": "mariacostac16@gmail.com",
+  "userClient": "teste1",
+  "passwordClient": "1234567",
+  "nameClient": "Nome1",
+  "emailClient": "teste1@gmail.com",
   "cpfClient": "1234567890",
-  "addressClient": "Rua Joaquim Lima, 476 - Papicu",
-  "phoneClient": "85999999999"
+  "addressClient": "Rua Carlos Juaçaba, 821",
+  "phoneClient": "85991127644"
+}
+
+### CRIAR UMA EMPRESA
+#POST
+
+POST {{baseURL}}/companies/signup
+Content-Type: application/json
+
+{
+  "userCompany": "teste4",
+  "passwordCompany": "1234567",
+  "nameCompany": "Distribuidora Teste 4",
+  "emailCompany": "distribuidora4@gmail.com",
+  "cnpjCompany": "12345678901232",
+  "addressCompany": "Rua Carlos Juaçaba, 1030",
+  "delivery": true,
+  "phoneCompany": "85999999999"
+}
+
+### TESTE LISTA DE DISTRIBUIDORAS
+#GET
+GET {{baseURL}}/companies/listCompanies
+
+### TESTE MUDAR SENHA DE UM CLIENTE
+#PATCH
+PATCH {{baseURL}}/clients/forgot-pass
+Content-Type: application/json
+
+{
+  "userClient": "lucas",
+  "passwordClient": "123456"
+} 
+
+
+
+### TESTE LISTA DE DISTRIBUIDORAS
+#GET
+GET {{baseURL}}/maps/geocode
+Content-Type: application/json
+
+{
+  "address": "Rua Carlos Juacaba"
+}
+
+### TESTE DISTANCIAS
+#GET
+POST {{baseURL}}/maps/calculate-distance
+Content-Type: application/json
+
+{
+  "lat1": -3.9327,
+  "lon1": -38.5269,
+  "lat2": -3.7327,
+  "lon2": -38.5269
 }

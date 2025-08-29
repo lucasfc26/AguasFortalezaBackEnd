@@ -26,6 +26,24 @@ export class ClientInfo {
   @Column({ name: 'address_client', type: 'varchar', nullable: true })
   addressClient: string | null;
 
+  @Column({
+    name: 'latitude_client',
+    type: 'decimal',
+    precision: 10,
+    scale: 8,
+    nullable: true,
+  })
+  latitudeClient: number | null;
+
+  @Column({
+    name: 'longitude_client',
+    type: 'decimal',
+    precision: 11,
+    scale: 8,
+    nullable: true,
+  })
+  longitudeClient: number | null;
+
   @Column({ name: 'cont_bought_client', type: 'int', default: 0 })
   contBoughtClient: number;
 

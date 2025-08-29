@@ -4,6 +4,9 @@ import {
   IsOptional,
   IsString,
   Length,
+  IsNumber,
+  Min,
+  Max,
 } from 'class-validator';
 
 export class ClientSignupDto {
@@ -33,6 +36,18 @@ export class ClientSignupDto {
   @IsOptional()
   @IsString()
   addressClient?: string;
+
+  @IsOptional()
+  @IsNumber()
+  @Min(-90)
+  @Max(90)
+  latitudeClient?: number;
+
+  @IsOptional()
+  @IsNumber()
+  @Min(-180)
+  @Max(180)
+  longitudeClient?: number;
 
   @IsOptional()
   @IsString()

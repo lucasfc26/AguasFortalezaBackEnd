@@ -26,6 +26,12 @@ export class WholesaleCompany {
   @Column({ name: 'address_company', type: 'varchar', nullable: true })
   addressCompany: string | null;
 
+  @Column({ name: 'latitude_company', type: 'decimal', precision: 10, scale: 8, nullable: true })
+  latitudeCompany: number | null;
+
+  @Column({ name: 'longitude_company', type: 'decimal', precision: 11, scale: 8, nullable: true })
+  longitudeCompany: number | null;
+
   @Column({ name: 'cont_sells_company', type: 'int', default: 0 })
   contSellsCompany: number;
 

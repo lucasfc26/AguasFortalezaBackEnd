@@ -24,7 +24,7 @@ export class CompaniesService {
       nameCompany: dto.nameCompany,
       emailCompany: dto.emailCompany,
       cnpjCompany: dto.cnpjCompany,
-      addressCompany: dto.addressCompany ?? null,
+      addressCompany: dto.addressCompany,
       contSellsCompany: 0,
       rateCompany: 0,
       delivery: dto.delivery ?? false,
@@ -57,5 +57,10 @@ export class CompaniesService {
       uuidCompany: company.uuidCompany,
       userCompany: company.userCompany,
     };
+  }
+
+  async listCompanies() {
+    const companies = await this.companyRepo.find();
+    return companies.map((company) => company.nameCompany);
   }
 }

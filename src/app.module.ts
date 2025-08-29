@@ -6,6 +6,7 @@ import { ClientsModule } from './clients/clients.module';
 import { CompaniesModule } from './companies/companies.module';
 import { ProductsModule } from './products/products.module';
 import { DeliveriesModule } from './deliveries/deliveries.module';
+import { MapsModule } from './maps/maps.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { DeliveriesModule } from './deliveries/deliveries.module';
     CompaniesModule,
     ProductsModule,
     DeliveriesModule,
+    MapsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

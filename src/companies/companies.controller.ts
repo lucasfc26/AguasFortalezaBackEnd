@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { CompaniesService } from './companies.service';
 import { CompanySignupDto } from './dtos/company-signup.dto';
 import { CompanyLoginDto } from './dtos/company-login.dto';
@@ -15,5 +15,10 @@ export class CompaniesController {
   @Post('login')
   login(@Body() dto: CompanyLoginDto) {
     return this.companiesService.login(dto);
+  }
+
+  @Get('listCompanies')
+  getCompanyList() {
+    return this.companiesService.listCompanies();
   }
 }
