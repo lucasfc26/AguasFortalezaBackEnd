@@ -5,9 +5,9 @@ export class ClientInfo {
   @PrimaryColumn({ name: 'uuid_client', type: 'uuid' })
   uuidClient: string;
 
-  @Column({ name: 'user_client', type: 'varchar', unique: true })
-  userClient: string;
-
+  @Column({ name: 'email_client', type: 'varchar', unique: true })
+  emailClient: string;
+  
   @Column({ name: 'password_client', type: 'varchar' })
   passwordClient: string;
 
@@ -16,10 +16,7 @@ export class ClientInfo {
 
   @Column({ name: 'name_client', type: 'varchar' })
   nameClient: string;
-
-  @Column({ name: 'email_client', type: 'varchar', unique: true })
-  emailClient: string;
-
+  
   @Column({ name: 'cpf_client', type: 'varchar', length: 14 })
   cpfClient: string;
 
@@ -58,4 +55,9 @@ export class ClientInfo {
 
   @Column({ name: 'phone_client', type: 'varchar', nullable: true })
   phoneClient: string | null;
+
+  @Column({ name: 'Eula_client', type: 'bool', nullable: false })
+  eulaClient: bool | false;
+  
+  
 }
